@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Upload Image of MRI scan of Brain</h2>
+
+<div>
+  <form id="upload-file" method="post" enctype="multipart/form-data">
+    <label for="imageUpload" class="upload-label"> Choose... </label>
+    <input
+      type="file"
+      name="file"
+      id="imageUpload"
+      accept=".png, .jpg, .jpeg"
+    />
+  </form>
+
+  <div class="image-section" style="display: none">
+    <div class="img-preview">
+      <div id="imagePreview"></div>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary btn-lg" id="btn-predict">
+        Predict..
+      </button>
+    </div>
+  </div>
+  <div class="loader_text" style="display: none">
+    <h4>Calculating...</h4>
+    <br />
+    <br />
+  </div>
+  <div class="loader" style="display: none"></div>
+
+  <h3 id="result">
+    <span> </span>
+  </h3>
+  <br />
+  <br />
+  <h4 class="glioma" style="display: none">
+    <a
+      href="https://www.mayoclinic.org/diseases-conditions/glioma/symptoms-causes/syc-20350251#:~:text=Glioma%20is%20a%20type%20of,glial%20cells%20can%20produce%20tumors."
+      >Learn More</a
+    >
+  </h4>
+  <h4 class="meningioma" style="display: none">
+    <a
+      href="https://www.mayoclinic.org/diseases-conditions/meningioma/symptoms-causes/syc-20355643"
+      >Learn More</a
+    >
+  </h4>
+  <h4 class="pituitary" style="display: none">
+    <a
+      href="https://www.mayoclinic.org/diseases-conditions/pituitary-tumors/symptoms-causes/syc-20350548#:~:text=Pituitary%20tumors%20are%20abnormal%20growths,produce%20lower%20levels%20of%20hormones."
+      >Learn More</a
+    >
+  </h4>
+</div>
+
+{% endblock %}
